@@ -1,0 +1,29 @@
+---
+title: "Cancer hallmark"
+output: html_notebook
+---
+
+Below I process angiogensis data 
+## Angiogenesis
+
+```{r}
+library(data.table)
+all.hallmark.trim = readRDS("/liulab/xmwang/TRIM/module1/output_module1/cancer.hallmarks.trim1.rds")
+save.data$angiogenesis = list()
+save.data$angiogenesis$sum.model = all.hallmark.trim$Inducing_Angiogenesis %>% data.table %>% .[,.(TF=gene, auc_ci=auc_ci)]
+temp=fread("/liulab/asahu/projects/gdt/results/esrra/trim.angiogensis.supp.result.csv")
+save.data$angiogenesis$show.genes = temp$TFCR
+save.data$angiogenesis$table = temp
+saveRDS(file="data/save.data.rds", save.data)
+```
+
+## evasion of growth suppressor
+
+```{r}
+save.data$growth = list()
+save.data$growth$sum.model = all.hallmark.trim$Evading_Growth_Suppressors %>% data.table %>% .[,.(TF=gene, auc_ci=auc_ci)]
+temp=fread("/liulab/asahu/projects/gdt/results/esrra/trim.growth.supp.result.csv")
+save.data$growth$show.genes = temp$TFCR
+save.data$growth$table = temp
+saveRDS(file="data/save.data.rds", save.data)
+```
