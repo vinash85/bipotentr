@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: BipotentR Web
+message: 'If you use this software, please cite it as below.'
+type: software
+title: "DeepTransporter"
+version: 1.0.0
+doi: DOI: 10.5281/zenodo.7342837
+date-released: 2022-11-15
+url: "http://bipotentr.dfci.harvard.edu/"
+authors:
+  - given-names: Avinash
+    family-names: Sahu
+    name-particle: Avinash
+    email: avinash.sahu@gmail.com
+    affiliation: Dana Farber Cancer Institute
+    orcid: 'https://orcid.org/0000-0002-2193-6276'
